@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Water Village</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Cartoon-style River placed in the center of the game -->
+  <div id="river-container">
+    <img src="img/river-cartoon-long.svg" alt="Cartoon River" id="river-img">
+  </div>
+  <!-- Decorative Clouds for a lively background -->
+  <div class="cloud" style="top: 40px; left: 80px;"></div>
+  <div class="cloud" style="top: 100px; left: 400px;"></div>
+  <div class="cloud" style="top: 60px; left: 700px;"></div>
+
+
+  <!-- Game Rules Modal (shown before difficulty selection) -->
+  <div id="rules-modal" style="display: none;">
+    <div id="rules-modal-content">
+      <img src="img/logo.png" alt="Charity: Water Logo" class="rules-logo">
+      <h2 class="rules-title">Water Village: A Charity: Water Game</h2>
+      <div class="rules-body">
+        <ul>
+          <li>Build and upgrade huts and wells</li>
+          <li>Collect water drops that spawn every 5 minutes</li>
+          <li>Don't build structures on top of each other or on top of trees</li>
+          <li>Use wells to generate water drops every 2 minutes</li>
+        </ul>
+        <div class="rules-difficulty">
+          <strong>Difficulty Modes:</strong>
+          <ul>
+            <li><span style="color:#005baa;">Easy</span>: Wells produce <b>15 drops</b> every 2 minutes</li>
+            <li><span style="color:#005baa;">Normal</span>: <b>8 drops</b> every 2 minutes</li>
+            <li><span style="color:#005baa;">Hard</span>: <b>4 drops</b> every 2 minutes</li>
+          </ul>
+        </div>
+        <div class="rules-prompt" style="margin-top:18px;">
+          <b>Please type 'Easy', 'Normal', or 'Hard' to begin.</b>
+        </div>
+        <input id="difficulty-input" type="text" placeholder="Easy, Normal, or Hard" autocomplete="off" style="margin-top:14px; font-size:1.1em; padding:8px; border-radius:6px; border:1px solid #ccc; width:80%;">
+        <button id="rules-modal-btn" style="margin-top:18px; background:#f9d342; color:#005baa; font-weight:bold; border:none; border-radius:8px; padding:10px 24px; font-size:1.1em; cursor:pointer;">Start Game</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <div class="splash-logo-bg">
+    <div class="logo-box">
+      <img src="img/logo.png" alt="Charity: Water Logo" class="logo">
+    </div>
+    </div>
+    <h1>WATER VILLAGE</h1>
+    <button id="start-btn">Start Game</button>
+    <!-- Animated water droplet transition overlay -->
+    <div id="droplet-transition"></div>
+  </div>
+
+  <!-- Game UI -->
+  <div id="game-ui" style="display: none;">
+
+    <div id="top-bar">
+      <img src="img/water-can-transparent.png" class="top-logo" />
+      <span class="title">WATER VILLAGE</span>
+      <div id="score-ui">
+        <img src="img/drop-icon.png" class="drop-icon">
+        <span id="water-count">0</span>
+      </div>
+      <button id="build-btn">BUILD</button>
+      <button id="upgrade-btn">UPGRADE</button>
+      <button id="reset-btn">RESET</button>
+    </div>
+
+    <div id="village-area">
+      <!-- Village wall as a CSS background, always visible -->
+    </div>
+
+    <div id="feedback-message"></div>
+  </div>
+
+
+
+  <!-- Win Modal -->
+  <div id="modal" style="display: none;">
+    <div id="modal-message">
+      <h2>You’ve helped build a thriving water village!</h2>
+      <button id="modal-close">Close</button>
+    </div>
+  </div>
+
+  <!-- Charity: Water Branded Footer -->
+<footer id="cw-footer">
+  <div class="footer-content">
+    <img src="img/logo.png" alt="Charity: Water Logo" class="footer-logo">
+    <span class="footer-title">Water Village &middot; Powered by Charity: Water</span>
+    <div class="footer-links">
+      <a href="https://www.charitywater.org/" target="_blank" rel="noopener" class="footer-link">Learn More</a>
+      <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener" class="footer-link donate">Donate Now</a>
+    </div>
+  </div>
+</footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

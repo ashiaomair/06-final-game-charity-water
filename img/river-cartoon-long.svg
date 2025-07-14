@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Cartoon-style vertical river, extra long for full screen height, with animated water for beginners -->
+<svg width="120" height="1200" viewBox="0 0 120 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cartoonBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7fd6ff"/>
+      <stop offset="100%" stop-color="#2196f3"/>
+    </linearGradient>
+    <pattern id="wavePattern" patternUnits="userSpaceOnUse" width="60" height="40">
+      <path d="M0 20 Q 15 0 30 20 T 60 20" fill="none" stroke="#b3e5fc" stroke-width="6">
+        <animate attributeName="d" values="M0 20 Q 15 0 30 20 T 60 20;M0 20 Q 15 40 30 20 T 60 20;M0 20 Q 15 0 30 20 T 60 20" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </pattern>
+  </defs>
+  <!-- Main river cartoon shape -->
+  <path d="M60,0 C90,200 30,400 60,600 C90,800 30,1000 60,1200" stroke="#1976d2" stroke-width="80" fill="none"/>
+  <path d="M60,0 C90,200 30,400 60,600 C90,800 30,1000 60,1200" stroke="url(#cartoonBlue)" stroke-width="70" fill="none"/>
+  <!-- Animated water waves -->
+  <path d="M60,0 C90,200 30,400 60,600 C90,800 30,1000 60,1200" stroke="url(#wavePattern)" stroke-width="16" fill="none" opacity="0.7"/>
+  <!-- River edge highlights -->
+  <path d="M60,0 C80,200 40,400 60,600 C80,800 40,1000 60,1200" stroke="#e0f7fa" stroke-width="8" fill="none" opacity="0.5"/>
+</svg>

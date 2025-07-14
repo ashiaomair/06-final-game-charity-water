@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simple animated SVG river for beginners -->
+<svg width="120" height="600" viewBox="0 0 120 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="riverBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#aeefff"/>
+      <stop offset="100%" stop-color="#2196f3"/>
+    </linearGradient>
+    <filter id="blur" x="-10" y="-10" width="140" height="620">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+    <animateMotion id="riverFlow" dur="6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" />
+  </defs>
+  <!-- Main river shape -->
+  <path d="M60,0 C80,100 40,200 60,300 C80,400 40,500 60,600" stroke="url(#riverBlue)" stroke-width="40" fill="none" filter="url(#blur)"/>
+  <!-- River highlights -->
+  <path d="M60,0 C75,100 45,200 60,300 C75,400 45,500 60,600" stroke="#e0f7fa" stroke-width="10" fill="none" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" from="0" to="60" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M60,0 C85,100 55,200 60,300 C85,400 55,500 60,600" stroke="#b3e5fc" stroke-width="6" fill="none" opacity="0.4">
+    <animate attributeName="stroke-dashoffset" from="0" to="40" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+</svg>
